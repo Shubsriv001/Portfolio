@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Not Deployed</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <style>
+        /* Base Styles */
+        body {
+            background: radial-gradient(circle at top left, #1e1e2f, #000000);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: bounceIn 1.5s ease-out;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff6347;
+            animation: slideIn 1s ease-out;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #a5a1a1;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 1s;
+            margin-bottom: 30px;
+        }
+
+        .loader {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin-top: 30px;
+        }
+
+        h1:hover {
+            color: #ff4500;
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .loader {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-top: 15px;
+            }
+
+            .loader {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops! App Not Deployed Yet</h1>
+        <p>working hard and the app will be deployed soon. Stay tuned!</p>
+        <div class="loader" id="lottie-animation"></div>
+    </div>
+
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation'), 
+            renderer: 'svg', 
+            loop: true, 
+            autoplay: true, 
+            path: 'https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json' 
+        });
+    </script>
+</body>
+</html>
